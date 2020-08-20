@@ -26,6 +26,7 @@ pageRoutes.route('/').get(function(req, res){
             console.log('Error in home page');
         }
         else{
+            console.log('Received data from db home page');
             res.json(test);
         }
     });
@@ -38,6 +39,7 @@ pageRoutes.route('/:id').get(function(req, res){
             console.log('Error in get data page');
         }
         else{
+            console.log('Received data from db edit page');
             res.json(test);
         }
     });
@@ -50,6 +52,7 @@ pageRoutes.route('/add').post(function(req, res){
     test.save()
         .then(test => {
             res.status(200).json({'result': 'item added successfully2'});
+            console.log('updated data to db');
         })
         .catch(error => {
             res.status(400).send('Adding item failed');
@@ -91,7 +94,7 @@ pageRoutes.route('/delete/:id').delete(function(req,res){
     });
 });
 
-app.use('/home', pageRoutes);
+app.use('/', pageRoutes);
 
 app.listen(PORT, function(){
     console.log('Working');
