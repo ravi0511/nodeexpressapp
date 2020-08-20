@@ -13,7 +13,7 @@ let Test = require('./test.model');
 app.use(cors());
 app.use(bodyparser.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/testdb', { useNewUrlParser: true });
+mongoose.connect('mongodb://127.0.0.1:27017/newtestdb', { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 connection.once('open', function(){
