@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 // let Test = require('./test.model');
 var port = process.env.port || 3000;
 app.get('/',(req, res)=> {
-    res.send('Hello World Updated');
+    res.send('Hello World Second Branch');
 });
 mongoose.connect('mongodb://127.0.0.1:27017/testdb', { useNewUrlParser: true });
 const connection = mongoose.connection;
